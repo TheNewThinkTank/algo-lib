@@ -10,6 +10,7 @@ def is_prime(n: int) -> bool:
     :return: _description_
     :rtype: bool
     """
+
     for k in range(2, int(math.sqrt(n)) + 1):
         if n % k == 0:
             return False

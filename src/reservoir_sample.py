@@ -3,7 +3,8 @@ import random
 
 
 def reservoir_sample(generator, k: int):
-    """Select k random elements from the generator using reservoir sampling."""
+    """Select k random elements from the generator using reservoir sampling.
+    """
 
     reservoir = []
 
