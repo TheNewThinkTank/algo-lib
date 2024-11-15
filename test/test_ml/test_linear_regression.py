@@ -1,7 +1,13 @@
 
+import os
+import sys
+
 import numpy as np
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+
 from algo_lib.ml.linear_regression import LinearRegression
 
 
