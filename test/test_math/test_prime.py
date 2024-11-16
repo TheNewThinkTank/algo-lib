@@ -1,5 +1,11 @@
 
-from algo_lib.math.prime import is_prime, generate_primes, prime_generator
+import pytest
+from algo_lib.math.prime import (
+    is_prime,
+    generate_primes,
+    prime_generator,
+    largest_prime_factor
+    )
 
 
 def test_is_prime_edge_cases():
@@ -97,3 +103,40 @@ def test_prime_generator_continues_correctly():
     next_primes = [next(prime_gen) for _ in range(5)]
     expected_primes = [73, 79, 83, 89, 97]  # 21st to 25th primes
     assert next_primes == expected_primes
+
+
+def test_largest_prime_factor_small_numbers():
+    # Small numbers with known largest prime factors
+    assert largest_prime_factor(2) == 2
+    assert largest_prime_factor(3) == 3
+    assert largest_prime_factor(4) == 2
+    assert largest_prime_factor(5) == 5
+    assert largest_prime_factor(6) == 3
+    assert largest_prime_factor(15) == 5
+
+
+def test_largest_prime_factor_large_number():
+    # Known large number
+    assert largest_prime_factor(600851475143) == 6857
+
+
+def test_largest_prime_factor_prime_number():
+    # A prime number should return itself
+    assert largest_prime_factor(97) == 97
+    assert largest_prime_factor(131) == 131
+
+
+def test_largest_prime_factor_edge_cases():
+    # Edge cases
+    with pytest.raises(ValueError):
+        largest_prime_factor(1)  # No prime factors
+    with pytest.raises(ValueError):
+        largest_prime_factor(0)  # No prime factors
+    with pytest.raises(ValueError):
+        largest_prime_factor(-10)  # Negative numbers have no valid prime factors
+
+
+def test_largest_prime_factor_composite_numbers():
+    # Composite numbers
+    assert largest_prime_factor(48) == 3  # 2 * 2 * 2 * 2 * 3
+    assert largest_prime_factor(100) == 5  # 2 * 2 * 5 * 5

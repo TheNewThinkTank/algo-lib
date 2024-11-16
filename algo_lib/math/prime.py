@@ -83,3 +83,26 @@ def prime_generator():
             del composites[candidate]  # Remove the handled composite
 
         candidate += 1
+
+
+def largest_prime_factor(n: int) -> int:
+    """
+    Find the largest prime factor of the given number.
+
+    :param n: The number to find the largest prime factor for.
+    :type n: int
+    :return: The largest prime factor of n.
+    :rtype: int
+    """
+    if n <= 1:
+        raise ValueError("Number must be greater than 1")
+
+    factor = 2
+    while factor * factor <= n:
+        if n % factor == 0:
+            n //= factor
+        else:
+            factor += 1
+
+    # When the loop exits, n itself is the largest prime factor
+    return n
