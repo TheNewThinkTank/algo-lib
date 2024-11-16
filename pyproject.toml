@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "algo-lib"
-version = "0.0.3"
+name = "algo-library"
+version = "0.0.4"
 description = "Library for common algorithms"
 authors = ["Gustav Rasmussen"]
 readme = "README.md"

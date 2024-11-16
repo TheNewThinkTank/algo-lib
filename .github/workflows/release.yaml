@@ -20,6 +20,10 @@ jobs:
       suffix: ${{ steps.release.outputs.suffix }}
       tag_name: ${{ steps.release.outputs.tag_name }}
     steps:
+
+      - name: clear-cache
+        run: rm -rf ~/.cache/pypa
+
       - uses: actions/checkout@v4
 
       - name: Extract tag and Details
