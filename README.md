@@ -1,12 +1,12 @@
 
-<a href="https://pypi.org/project/algorithm-lib/">
-<img src="https://img.shields.io/pypi/v/algorithm-lib.svg">
+<a href="https://pypi.org/project/algo-library/">
+<img src="https://img.shields.io/pypi/v/algo-library.svg">
 </a>
 <a href="https://github.com/TheNewThinkTank/msgspec/blob/main/LICENSE">
 <img src="https://img.shields.io/github/license/TheNewThinkTank/algo-lib.svg">
 </a>
 
-![PyPI Downloads](https://img.shields.io/pypi/dm/algorithm-lib)
+![PyPI Downloads](https://img.shields.io/pypi/dm/algo-library)
 ![CI](https://github.com/TheNewThinkTank/algo-lib/actions/workflows/wf.yml/badge.svg)
 [![codecov](https://codecov.io/gh/TheNewThinkTank/algo-lib/graph/badge.svg?token=ltMgNt08rV)](https://codecov.io/gh/TheNewThinkTank/algo-lib)
 ![commit activity](https://img.shields.io/github/commit-activity/m/TheNewThinkTank/algo-lib)
@@ -19,7 +19,7 @@ Library for common algorithms
 ## Installation
 
 ```BASH
-pip install algorithm-lib
+pip install algo-library
 ```
 
 ## Import

@@ -1,4 +1,4 @@
-PACKAGE_NAME := algorithm-lib
+PACKAGE_NAME := algo-library
 OWNER := TheNewThinkTank
 
 .PHONY: extract-version check-pypi-version setup-python install-deps build-package
