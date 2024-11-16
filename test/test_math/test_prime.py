@@ -1,5 +1,5 @@
 
-from algo_lib.math.prime import is_prime
+from algo_lib.math.prime import is_prime, generate_primes, prime_generator
 
 
 def test_is_prime_edge_cases():
@@ -40,3 +40,60 @@ def test_is_prime_special_cases():
     # Edge case for even and odd non-primes
     assert not is_prime(25)  # Odd non-prime
     assert not is_prime(28)  # Even non-prime
+
+
+def test_generate_primes_empty():
+    # Test edge case where no primes are possible
+    assert generate_primes(1) == []
+    assert generate_primes(0) == []
+    assert generate_primes(-10) == []
+
+
+def test_generate_primes_small_numbers():
+    # Test small numbers
+    assert generate_primes(10) == [2, 3, 5, 7]
+    assert generate_primes(20) == [2, 3, 5, 7, 11, 13, 17, 19]
+
+
+def test_generate_primes_large_numbers():
+    # Test a larger range
+    assert generate_primes(50) == [
+        2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47
+        ]
+
+
+def test_generate_primes_single_prime():
+    # Test ranges containing only one prime
+    assert generate_primes(2) == [2]
+    assert generate_primes(3) == [2, 3]
+
+
+def test_prime_generator():
+    # Test the first 10 primes using the generator
+    prime_gen = prime_generator()
+    expected_primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+    for expected in expected_primes:
+        assert next(prime_gen) == expected
+
+
+def test_prime_generator_matches_generate_primes():
+    # Compare the output of the generator to the list of primes
+    prime_gen = prime_generator()
+    limit = 100
+    primes_from_generator = [
+        next(prime_gen) for _ in range(len(generate_primes(limit)))
+        ]
+    primes_from_list = generate_primes(limit)
+    assert primes_from_generator == primes_from_list
+
+
+def test_prime_generator_continues_correctly():
+    # Ensure the generator continues generating primes correctly
+    prime_gen = prime_generator()
+    # Skip the first 20 primes
+    for _ in range(20):
+        next(prime_gen)
+    # Check the next primes
+    next_primes = [next(prime_gen) for _ in range(5)]
+    expected_primes = [73, 79, 83, 89, 97]  # 21st to 25th primes
+    assert next_primes == expected_primes
