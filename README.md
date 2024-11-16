@@ -16,16 +16,42 @@
 
 Library for common algorithms
 
-<!--
-# TODO: host on PyPI
-# TODO: setup codecov
-# TODO: add badges to README
-# TODO: add wf's for code quality and PyPI release
-
 ## Installation
 
+```BASH
+pip install algorithm-lib
+```
 
+## Import
+
+```Python
+from algo_lib.ml.linear_regression import linear_regression
+```
 
 ## Usage
 
+see `test/test_ml/test_linear_regression.py`
+
+<!--
+## Create a new release
+
+example:
+
+```BASH
+git tag 0.0.1
+git push origin --tags
+```
+
+release a patch:
+
+```BASH
+poetry version patch
+```
+
+then `git commit`, `git push` and
+
+```BASH
+git tag 0.0.2
+git push origin --tags
+```
 -->
