@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-from algo_lib.ml.linear_regression import LinearRegression
+from algo_lib.ml.linear_regression import LinearRegression  # type: ignore
 
 
 def mean_squared_error(y_true, y_pred):
