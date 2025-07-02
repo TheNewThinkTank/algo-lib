@@ -75,7 +75,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Compare Versions
-        uses: TheNewThinkTank/gh-actions/.github/actions/compare-pypi-versions@v1.0.3
+        uses: TheNewThinkTank/gh-actions/.github/actions/compare-pypi-versions@v1.0.4
         with:
           package_name: ${{ env.PACKAGE_NAME }}
           new_version: ${{ needs.details.outputs.new_version }}
